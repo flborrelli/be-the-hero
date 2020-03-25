@@ -1,29 +1,29 @@
 import React from 'react';
 import './styles.css';
-import logoImg from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
+import logoImg from '../../assets/logo.svg';
 import { FiArrowLeft } from 'react-icons/fi';
 
 
-function Register(){
+function NewIncident(){
   return(
-    <div className="register-container">
+    <div className="new-incident-container">
       <div className="content">
         <section>
           <img src={logoImg} alt="Be The Hero"/>
-          <h1>Cadastro</h1>
-          <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG.</p>
+          <h1>Cadastrar Novo Caso</h1>
+          <p>Descreva o caso detalhadamente para encontrar um herói para resolver isso.</p>
 
-          <Link className='back-link' to="/">
+          <Link className='back-link' to="/profile">
             <FiArrowLeft size={16} color="E02041" />
-            Voltar
+            Voltar para Home
           </Link>
         </section>
 
         <form>
-          <input placeholder='Nome da ONG'/>
-          <input type='email' placeholder='E-mail'/>
-          <input placeholder='Whatsapp'/>
+          <input placeholder='Título do Caso'/>
+          <textarea placeholder='Descrição'/>
+          <input placeholder='Valor em R$'/>
 
           <div className="input-group">
           <input placeholder='Cidade'/>
@@ -39,5 +39,4 @@ function Register(){
   )
 }
 
-
-export default Register;
+export default NewIncident;
