@@ -9,7 +9,6 @@ module.exports = {
 
     //contador de todos incidentes que são retornados em uma array com um único index com o count: numero de incidents, assim, com a desconstrução, pegamos somente o primeiro
     const [count] = await connection('incidents').count();
-    console.log(count)
 
     const incidents = await connection('incidents')
     .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
