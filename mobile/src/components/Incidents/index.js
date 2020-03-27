@@ -22,7 +22,7 @@ function Incidents(){
       return;
     }
 
-    if(totalIncidents > 0 && incidents.length === total) {
+    if(totalIncidents > 0 && incidents.length === totalIncidents) {
       return;
     }
 
@@ -62,13 +62,13 @@ const navigateToDetail = (incident) => {
         onEndReachedThreshold={0.2}
         renderItem={({ item: incident }) => (
           <View style={styles.incident}>
-          <Text style={styles.incidentProperty}>ONG:</Text>
+          <Text style={styles.incidentProperty}>ONG</Text>
           <Text style={styles.incidentValue}>{incident.name}</Text>
 
-          <Text style={styles.incidentProperty}>CASO:</Text>
+          <Text style={styles.incidentProperty}>CASO</Text>
           <Text style={styles.incidentValue}>{incident.title}</Text>
 
-          <Text style={styles.incidentProperty}>VALOR:</Text>
+          <Text style={styles.incidentProperty}>VALOR</Text>
           <Text style={styles.incidentValue}>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</Text>
           <TouchableOpacity style={styles.detailsButton} onPress={() => navigateToDetail(incident)}>
             <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>

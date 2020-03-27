@@ -43,13 +43,16 @@ function Detail() {
 
       <View style={styles.incident}>
 
-        <Text style={[styles.incidentProperty, { marginTop: 0}]}>ONG:</Text>
+        <Text style={[styles.incidentProperty, { marginTop: 0}]}>ONG</Text>
         <Text style={styles.incidentValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
 
-        <Text style={styles.incidentProperty}>CASO:</Text>
+        <Text style={styles.incidentProperty}>CASO</Text>
         <Text style={styles.incidentValue}>{incident.title}</Text>
 
-        <Text style={styles.incidentProperty}>VALOR:</Text>
+        <Text style={styles.incidentProperty}>DESCRIÇÃO</Text>
+        <Text style={styles.incidentValue}>{incident.description}</Text>
+
+        <Text style={styles.incidentProperty}>VALOR</Text>
         <Text style={styles.incidentValue}>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</Text>
 
       </View>
@@ -60,11 +63,11 @@ function Detail() {
 
         <Text style={styles.heroDescription}>Entre em contato:</Text>
         <View style={styles.actions}>
-          <TouchableOpacity style={styles.action} onPress={sendWhatsapp}>
+          <TouchableOpacity style={[styles.action, {backgroundColor: '#25d366'}]} onPress={sendWhatsapp}>
             <Text styles={styles.action}>WhatsApp</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.action} onPress={sendMail}>
+          <TouchableOpacity style={[styles.action, {backgroundColor: '#34b7f1'}]} onPress={sendMail}>
             <Text styles={styles.action}>E-mail</Text>
           </TouchableOpacity>
         </View>
