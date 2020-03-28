@@ -53,3 +53,43 @@
 .register-container .content form .input-group input + input {
   margin-left: 8px;
 }
+
+@media (max-width: 900px) {
+  
+  .register-container .content {
+    flex-direction: column;
+    padding: 50px;
+  }
+
+  .register-container .content section h1 {
+    text-align: center;
+    margin-top: 8vh;
+  }
+
+  .register-container .content section p {
+    text-align: center;
+  }
+
+  .back-link {
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .register-container .content img {
+    margin-top: 30vh;
+    margin-left: 10vh;
+  }
+}
+
+@media (max-width: 460px) {
+  .register-container .content {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .register-container .content img {
+    margin-left: 10vw;
+  }
+}

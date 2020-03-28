@@ -44,7 +44,7 @@ function Logon(){
         </form>
       </section>
 
-      <img src={heroesImg} alt="heroes"/>
+      <img className='heroes' src={heroesImg} alt="heroes"/>
     </div>
   )
 }

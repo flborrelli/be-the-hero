@@ -46,3 +46,45 @@
 .new-incident-container .content form textarea {
   margin-top: 8px;
 }
+
+@media (max-width: 900px) {
+  
+  
+  .new-incident-container .content {
+    flex-direction: column;
+    padding: 30px;
+  }
+  
+  .new-incident-container .content section h1 {
+    text-align: center;
+    margin: 32 0 16px;
+  }
+
+  .new-incident-container .content section p {
+    text-align: center;
+  }
+
+  .back-link {
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .new-incident-container .content img {
+    margin-top: 20vh;
+    margin-left: 10vh;
+  }
+}
+
+@media (max-width: 460px) {
+
+  .new-incident-container .content {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .new-incident-container .content img {
+    margin-left: 10vw;
+  }
+}

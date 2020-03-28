@@ -43,10 +43,11 @@ function Profile(){
   return(
     <div className="profile-container">
       <header>
+
         <img src={logoImg} alt="Be The Hero"/>
         <span>Bem vinda, {ongName}</span>
 
-        <Link className='button' to='/incidents/new'>
+        <Link className='button new-incident-button' to='/incidents/new'>
           Cadastrar novo caso
         </Link>
         <button type='button' onClick={handleLogout}>
@@ -61,13 +62,13 @@ function Profile(){
 
       {incidents.map(incidents => (
         <li key={incidents.id}>
-        <strong>CASO:</strong>
+        <strong>CASO</strong>
         <p>{incidents.title}</p>
 
-        <strong>DESCRIÇÃO:</strong>
+        <strong>DESCRIÇÃO</strong>
         <p>{incidents.description}</p>
 
-        <strong>VALOR: </strong>
+        <strong>VALOR</strong>
         <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incidents.value)}</p>
 
         <button type='button' onClick={() => handleDeleteIncident(incidents.id)}><FiTrash2 size={20} color='#a8a8b3'/></button>

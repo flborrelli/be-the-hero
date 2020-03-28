@@ -25,6 +25,44 @@
   margin-bottom: 32px;
 }
 
+@media (max-width: 1144px) {
+
+  .logon-container {
+    margin-left: 5vw;
+  }
+
+  .heroes {
+    width: 50%;
+    padding-right: 2vw;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .logon-container {
+    justify-content: center;
+  }
+
+  .heroes {
+    display: none;
+  }
+
+  .logon-container section img {
+    margin-left: 10vw;
+  }
+
+  .logon-container section.form {
+    margin-right: 10px;
+  }
+
+  .logon-container section.form form {
+    margin-top: 70px;
+  }
+
+
+}
+
 
 
 
