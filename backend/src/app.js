@@ -3,7 +3,7 @@ const cors = require('cors');
 const routes = require('./routes');
 const { errors } = require('celebrate');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
 const app = express();
 
@@ -13,6 +13,6 @@ app.use(routes);
 app.use(errors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
 module.exports = app;
