@@ -5,7 +5,6 @@ import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
 import styles from "./styles";
 import logoImg from "../../assets/logo.png";
 import * as MailComposer from 'expo-mail-composer';
-import api from "../../services/api";
 
 
 function Detail() {
