@@ -4,6 +4,8 @@ import logoImg from "../../assets/logo.svg";
 import { Link, useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import api from "../../services/api";
+import { toast } from 'react-toastify';
+
 
 function Register() {
   const [name, setName] = useState("");
@@ -11,8 +13,21 @@ function Register() {
   const [whatsapp, setWhatsapp] = useState("");
   const [city, setCity] = useState("");
   const [uf, setUf] = useState("");
+  
 
   const history = useHistory();
+
+  const registerNotify = (id) => toast.info(`Cadastro realizado com sucesso. ID de acesso: ➡️ ${id} ⬅️. Você precisará dele para fazer o logon.`, {
+    position: toast.POSITION.TOP_CENTER,
+    autoClose: false,
+    className: 'notify'
+  });
+
+  const registerErrorNotify = () => toast.warning('❌ Ocorreu um erro no cadastro, verifique as informações e tente novamente.', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -23,12 +38,10 @@ function Register() {
 
     try{
       const response = await api.post('ongs', data);
-  
-      alert(`Seu ID de acesso: ${response.data.id}`)
-
       history.push('/')
+      registerNotify(response.data.id);
     } catch(err){
-      alert('Erro no cadastro, tente novamente.')
+      registerErrorNotify();
     }
 
 

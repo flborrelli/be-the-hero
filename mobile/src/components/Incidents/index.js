@@ -42,6 +42,7 @@ const navigateToDetail = (incident) => {
   navigation.navigate('Detail', { incident });
 }
 
+
   return(
     <View style={styles.container} >
       <View style={styles.header} >

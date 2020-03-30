@@ -4,6 +4,9 @@ import logoImg from '../../assets/logo.svg';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 import api from "../../services/api";
+import { toast } from 'react-toastify';
+
+
 
 
 function Profile(){
@@ -23,6 +26,22 @@ function Profile(){
     })
   }, [ongId]);
 
+  
+  const deleteNotify = () => toast.info('Caso deletado com sucesso  ❌', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
+  const deleteErrorNotify = () => toast.warning('❌ Erro ao deletar um caso, tente novamente', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
+  const logoutNotify = () => toast.success("Logout realizado com sucesso ☑️", {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
   const handleDeleteIncident = async (id) => {
     try{
       await api.delete(`incidents/${id}`, { headers: {
@@ -30,14 +49,16 @@ function Profile(){
       }});
       //filtrar os incidents que nao foram deletados para não termos erro
       setIncidents(incidents.filter(incident => incident.id !== id))
+      deleteNotify();
     } catch(err){
-      alert('Erro ao deletar caso, tente novamente.')
+      deleteErrorNotify();
     }
   };
 
   const handleLogout = () => {
     localStorage.clear();
     history.push('/');
+    logoutNotify();
   }
 
   return(
@@ -56,7 +77,7 @@ function Profile(){
 
       </header>
 
-      <h1>Casos cadastrados</h1>
+      <h1>Casos cadastrados: {incidents.length}</h1>
 
       <ul>
 

@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import logoImg from '../../assets/logo.svg';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from "../../services/api";
+import { toast } from 'react-toastify';
 
 function NewIncident(){
 
@@ -13,6 +14,16 @@ function NewIncident(){
 
   const ongId = localStorage.getItem('ongId');
   const history = useHistory();
+
+  const newIncidentNotify = () => toast.success('✅ Novo incidente cadastrado com sucesso!', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
+  const incidentRegisterErrorNotify = () => toast.error('❌ Ocorreu um erro ao cadastrar um novo incidente, tente novamente.', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
 
   const handleNewIncident = async (e) => {
     e.preventDefault();
@@ -26,8 +37,9 @@ function NewIncident(){
         Authorization: ongId,
       }});
       history.push('/profile');
+      newIncidentNotify();
     }catch(err){
-      alert('Erro ao cadastrar caso, tente novamente.')
+      incidentRegisterErrorNotify();
     }
 
   }

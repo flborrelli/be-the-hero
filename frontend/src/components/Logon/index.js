@@ -5,12 +5,24 @@ import './styles.css';
 import heroesImg from '../../assets/heroes.png';
 import logoImg from '../../assets/logo.svg';
 import api from "../../services/api";
+import { toast } from 'react-toastify';
 
 
 function Logon(){
 
   const [id, setId] = useState('');
   const history = useHistory();
+
+  const logonNotify = () => toast.success('Você está logado! 😀', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
+  const logonErrorNotify = () => toast.warning('❌ Ocorreu um erro no logon, tente novamente.', {
+    position: toast.POSITION.TOP_CENTER,
+    className: 'notify'
+  });
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,8 +33,9 @@ function Logon(){
       localStorage.setItem('ongId', id);
       localStorage.setItem('ongName', response.data.name);
       history.push('/profile');
+      logonNotify();
     }catch(err){
-      alert('Falha no login, tente novamente.')
+      logonErrorNotify();
     }
   }
 
