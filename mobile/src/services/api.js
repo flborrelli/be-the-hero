@@ -4,7 +4,7 @@ const apiURL = 'https://be-the-hero-full-app.herokuapp.com';
 
 
 const api = axios.create({
-  baseURL: apiURL || localIP
+  baseURL: localIP
 });
 
 export default api;
