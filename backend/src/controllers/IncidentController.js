@@ -29,7 +29,7 @@ module.exports = {
     const ong_id = req.headers.authorization;
 
     //Criando um incident e para pegarmos o ID desse incident que é criado automaticamente, desconstruimos o array passando id
-    const [id] = await connection('incidents').insert({
+    const [id] = await connection('incidents').returning('id').insert({
       title,
       description,
       value,
