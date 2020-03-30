@@ -6,9 +6,6 @@ import './styles.css';
 import api from "../../services/api";
 import { toast } from 'react-toastify';
 
-
-
-
 function Profile(){
 
   const [incidents, setIncidents] = useState([]);
