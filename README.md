@@ -66,7 +66,7 @@ Therefore, the App's main purpose is to help non-governmental organizations (ONG
 
 ## Our team
 
-Be The Hero was developed with :green_heart: by [**Fernando Borrelli**](https://github.com/flborrelli)
+Be The Hero was developed with :heart: by [**Fernando Borrelli**](https://github.com/flborrelli)
 
 
 
