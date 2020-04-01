@@ -1,7 +1,7 @@
 ![](/frontend/src/assets/logo.svg)
 
 # Be The Hero :rocket:
-Be The Hero is a **responsive single-page Web application** and an **Android and IOS Mobile APP** developed with React and React Native. 
+Be The Hero is a **responsive single-page Web application** :computer: and an **Android and IOS Mobile APP** :iphone: developed with React and React Native. 
 
 
 #### Check it out here: https://be-the-hero-full-app.netlify.com/
@@ -35,6 +35,7 @@ Therefore, the App's main purpose is to help non-governmental organizations (ONG
 - Navigator
 - Expo
 - AJAX / Axios
+- Deep Linking
 
 #### Front-end
 
