@@ -43,6 +43,7 @@ Therefore, the App's main purpose is to help non-governmental organizations (ONG
 - React
 - AJAX / Axios
 - Toastify 
+- Jest
 
 #### Back-end
 
